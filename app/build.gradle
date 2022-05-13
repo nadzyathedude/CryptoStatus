@@ -16,7 +16,18 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+    flavorDimensions "version"
+    productFlavors {
+        create("dev") {
+            dimension = "version"
+            buildConfigField 'String', 'BASE_URL', '"https://min-api.cryptocompare.com/data/price?"'
+        }
 
+        create("prod") {
+            dimension = "version"
+            buildConfigField 'String', 'BASE_URL', '"https://min-api.cryptocompare.com/data/price?"'
+        }
+    }
     buildTypes {
         release {
             minifyEnabled false
