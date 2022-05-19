@@ -1,4 +1,4 @@
-package com.example.crypto.data
+package com.example.crypto.data.service
 
 import com.example.crypto.domain.modules.ConvertResponse
 import kotlinx.coroutines.Deferred

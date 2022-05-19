@@ -1,7 +1,7 @@
 package com.example.crypto.app.module
 
 import com.example.crypto.BuildConfig
-import com.example.crypto.data.CryptoApi
+import com.example.crypto.data.service.CryptoApi
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
