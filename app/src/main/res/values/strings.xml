@@ -1,9 +1,9 @@
 <resources>
-    <string name="app_name">crypto</string>
     <string name="bitcoin">BTC</string>
     <string name="ethereum">ETH</string>
     <string name="rub">₽</string>
     <string name="euro">€</string>
     <string name="dollar">$</string>
     <string name="yen">¥</string>
+    <string name="app_name">Курс криптовалюты</string>
 </resources>
