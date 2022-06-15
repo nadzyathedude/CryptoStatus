@@ -1,4 +1,4 @@
-package com.example.crypto.ui
+package com.example.crypto.ui.main
 
 import android.os.Bundle
 import androidx.core.content.ContextCompat
@@ -7,6 +7,9 @@ import com.example.crypto.R
 import com.example.crypto.databinding.MainActivityBinding
 import com.example.crypto.ui.adapter.CollectionAdapter
 import com.example.crypto.ui.base.BaseActivity
+import com.example.crypto.ui.main.MainPresenter
+import com.example.crypto.ui.main.MainView
+import com.google.android.material.tabs.TabLayoutMediator
 import moxy.presenter.InjectPresenter
 
 class MainActivity : BaseActivity(), MainView {
@@ -26,9 +29,13 @@ class MainActivity : BaseActivity(), MainView {
         collectionAdapter = CollectionAdapter(this)
         viewPager = binding.pager
         viewPager.adapter = collectionAdapter
+        TabLayoutMediator(binding.tabLayout, viewPager) { tab, position ->
+            if (position == 0) {
+                tab.text = resources.getString(R.string.eth)
+            } else {
+                tab.text = resources.getString(R.string.btc)
+            }
 
+        }.attach()
     }
-
-
-
 }

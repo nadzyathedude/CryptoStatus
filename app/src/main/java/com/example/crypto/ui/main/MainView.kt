@@ -1,4 +1,4 @@
-package com.example.crypto.ui
+package com.example.crypto.ui.main
 
 import moxy.MvpView
 

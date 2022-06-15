@@ -6,4 +6,6 @@
     <string name="dollar">$</string>
     <string name="yen">¥</string>
     <string name="app_name">Курс криптовалюты</string>
+    <string name="eth">ETH</string>
+    <string name="btc">BTC</string>
 </resources>

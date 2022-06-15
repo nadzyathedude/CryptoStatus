@@ -25,18 +25,8 @@
         android:background="@color/tab_layout"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
         app:tabIndicatorColor="@color/tab_layout_text"
-        app:tabTextColor="@color/tab_layout_text">
+        app:tabTextColor="@color/tab_layout_text" />
 
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="@string/ethereum" />
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="@string/bitcoin" />
-    </com.google.android.material.tabs.TabLayout>
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/pager"
