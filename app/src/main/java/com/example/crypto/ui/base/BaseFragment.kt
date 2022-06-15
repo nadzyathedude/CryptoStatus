@@ -4,10 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.viewbinding.ViewBinding
 import com.arellomobile.mvp.MvpAppCompatFragment
 import com.arellomobile.mvp.MvpView
 import com.example.crypto.utils.onDestroyNullable
+
 
 abstract class BaseFragment<VB : ViewBinding>(
     private val inflate: (
@@ -19,8 +21,6 @@ abstract class BaseFragment<VB : ViewBinding>(
 
     protected var binding by onDestroyNullable<VB>()
 
-    abstract fun initViews()
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -28,10 +28,7 @@ abstract class BaseFragment<VB : ViewBinding>(
     ): View {
         binding = inflate(inflater, container, false)
         return binding.root
+
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        initViews()
-    }
 }
