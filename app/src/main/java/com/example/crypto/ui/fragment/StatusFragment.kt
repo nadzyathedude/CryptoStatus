@@ -56,6 +56,14 @@ class StatusFragment : BaseFragment<StatusFragmentBinding>(StatusFragmentBinding
         binding.recycler.adapter = CurrencyListAdapter(convertedMoneyAmount)
     }
 
+    override fun showProgressBarState() {
+        binding.viewAnimator.visibleChildId = R.id.progress_bar
+    }
+
+    override fun showContentState() {
+        binding.viewAnimator.visibleChildId = R.id.recycler
+    }
+
 }
 
 

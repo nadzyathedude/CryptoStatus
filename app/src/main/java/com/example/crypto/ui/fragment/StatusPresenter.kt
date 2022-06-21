@@ -15,9 +15,11 @@ class StatusPresenter() : MvpPresenter<StatusView>(), KoinComponent {
     private val interactor: CryptoInteractor by inject()
 
     fun loadData(convertFrom: String) {
+        viewState.showProgressBarState()
         compositeDisposable.add(
             interactor.loadCurrencyStatus("ETH", converInto)
                 .observeOn(AndroidSchedulers.mainThread())
+                .doFinally(viewState::showContentState)
                 .subscribe { convertedResult ->
                     viewState.initRecycler(
                         listOf(

@@ -10,7 +10,8 @@
         <entry key="app/src/main/res/layout/etherium_fragment.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/list_item.xml" value="0.3727005004882813" />
         <entry key="app/src/main/res/layout/main_activity.xml" value="0.31328277587890624" />
-        <entry key="app/src/main/res/layout/status_fragment.xml" value="0.30025445292620867" />
+        <entry key="app/src/main/res/layout/progress_bar.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/status_fragment.xml" value="0.1" />
       </map>
     </option>
   </component>
