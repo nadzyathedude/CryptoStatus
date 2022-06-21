@@ -1,10 +1,7 @@
 package com.example.crypto.ui.adapter
 
-import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.example.crypto.domain.modules.ConvertResponse
-import com.example.crypto.domain.modules.ConvertedCurrency
 import com.example.crypto.ui.main.MainActivity
 import com.example.crypto.ui.fragment.StatusFragment
 

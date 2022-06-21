@@ -1,7 +1,6 @@
 package com.example.crypto.domain.intercator
 
 import com.example.crypto.domain.modules.ConvertResponse
-import com.example.crypto.domain.modules.ConvertedCurrency
 import com.example.crypto.domain.repository.CryptoRepository
 import io.reactivex.rxjava3.core.Single
 

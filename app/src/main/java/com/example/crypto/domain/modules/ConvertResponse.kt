@@ -7,7 +7,15 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class ConvertResponse(
-    @SerializedName("result")
+    @SerializedName("RUB")
     @Expose
-    val result: List<ConvertedCurrency>
+    val rub : Float,
+
+    @SerializedName("USD")
+    @Expose
+    val usd : Float,
+
+    @SerializedName("EUR")
+    @Expose
+    val eur : Float
 ) : Parcelable

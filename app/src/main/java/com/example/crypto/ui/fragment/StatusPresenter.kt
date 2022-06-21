@@ -19,9 +19,14 @@ class StatusPresenter() : MvpPresenter<StatusView>(), KoinComponent {
             interactor.loadCurrencyStatus("ETH", converInto)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe { convertedResult ->
-                    viewState.extractConvertedMoneyResult(convertedResult.result)
+                    viewState.initRecycler(
+                        listOf(
+                            convertedResult.rub,
+                            convertedResult.eur,
+                            convertedResult.usd
+                        )
+                    )
                 }
-
         )
     }
 }
