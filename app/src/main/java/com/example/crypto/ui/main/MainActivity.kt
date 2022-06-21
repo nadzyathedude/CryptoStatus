@@ -21,7 +21,6 @@ class MainActivity : MvpAppCompatActivity(), MvpView {
         super.onCreate(savedInstanceState)
         binding = MainActivityBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        window.statusBarColor = (ContextCompat.getColor(this, R.color.tab_layout))
         collectionAdapter = CollectionAdapter(this)
         viewPager = binding.pager
         viewPager.adapter = collectionAdapter
