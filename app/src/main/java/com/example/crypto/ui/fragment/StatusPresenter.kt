@@ -17,7 +17,7 @@ class StatusPresenter() : MvpPresenter<StatusView>(), KoinComponent {
     fun loadData(convertFrom: String) {
         viewState.showProgressBarState()
         compositeDisposable.add(
-            interactor.loadCurrencyStatus("ETH", converInto)
+            interactor.loadCurrencyStatus(convertFrom, converInto)
                 .observeOn(AndroidSchedulers.mainThread())
                 .doFinally(viewState::showContentState)
                 .subscribe { convertedResult ->

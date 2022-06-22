@@ -12,47 +12,36 @@ import com.example.crypto.ui.base.BaseFragment
 import com.example.crypto.ui.main.MainActivity
 import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.android.synthetic.main.main_activity.*
+import kotlinx.android.synthetic.main.status_fragment.view.*
 
 
-class StatusFragment : BaseFragment<StatusFragmentBinding>(StatusFragmentBinding::inflate),
+class StatusFragment(private val convertFrom: String) :
+    BaseFragment<StatusFragmentBinding>(StatusFragmentBinding::inflate),
     StatusView {
 
     @InjectPresenter
     lateinit var statusPresenter: StatusPresenter
-    lateinit var collectionAdapter: CollectionAdapter
-    lateinit var viewPager: ViewPager2
-
-    //    lateinit var selectedTabLabel: String
     private lateinit var convertedMoneyAmount: List<Float>
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        statusPresenter.loadData("ETH")
-
-    }
-
-    private fun getTabLabel(): String {
-        var tabLabel = ""
-        val tabLayout = (activity as MainActivity).tabLayout
-        val viewPager = (activity as MainActivity).viewPager
-        TabLayoutMediator(tabLayout, viewPager) { _, position ->
-            tabLabel = if (position == 1) {
-                resources.getString(R.string.eth)
-            } else {
-                resources.getString(R.string.btc)
-            }
+        statusPresenter.loadData(convertFrom)
+        binding.refeshLayout.setOnRefreshListener {
+            statusPresenter.loadData(convertFrom)
+            binding.refeshLayout.isRefreshing = false
         }
-        return resources.getString(R.string.eth)
+
     }
+
     //сделать enum -> передается во фрагмент как параметр
 
-     override fun initRecycler(currencyStatusResponse: List<Float>) {
-         convertedMoneyAmount = listOf(
-             currencyStatusResponse[0],
-             currencyStatusResponse[1],
-             currencyStatusResponse[2]
-         )
+    override fun initRecycler(currencyStatusResponse: List<Float>) {
+        convertedMoneyAmount = listOf(
+            currencyStatusResponse[0],
+            currencyStatusResponse[1],
+            currencyStatusResponse[2]
+        )
         binding.recycler.adapter = CurrencyListAdapter(convertedMoneyAmount)
     }
 

@@ -14,7 +14,10 @@ class CollectionAdapter(activity: MainActivity) :
 
 
     override fun createFragment(position: Int): Fragment {
-        return StatusFragment()
+        return when (position){
+            0-> StatusFragment(CurrencyType.ETH.toString())
+            else-> StatusFragment(CurrencyType.BTC.toString())
+        }
     }
 
 }

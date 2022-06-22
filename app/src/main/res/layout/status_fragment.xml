@@ -8,23 +8,29 @@
     android:backgroundTint="@color/white"
     android:orientation="vertical">
 
-    <com.example.crypto.utils.BetterViewAnimator
-        android:id="@+id/view_animator"
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/refesh_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler"
+        <com.example.crypto.utils.BetterViewAnimator
+            android:id="@+id/view_animator"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="138dp"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+            android:layout_height="match_parent">
 
-        <include
-            android:id="@+id/progress_bar"
-            layout="@layout/progress_bar"
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </com.example.crypto.utils.BetterViewAnimator>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="138dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+            <include
+                android:id="@+id/progress_bar"
+                layout="@layout/progress_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+        </com.example.crypto.utils.BetterViewAnimator>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 </LinearLayout>
