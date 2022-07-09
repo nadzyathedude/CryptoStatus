@@ -27,14 +27,13 @@ class StatusFragment(private val convertFrom: String) :
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         statusPresenter.loadData(convertFrom)
-        binding.refeshLayout.setOnRefreshListener {
-            statusPresenter.loadData(convertFrom)
-            binding.refeshLayout.isRefreshing = false
-        }
+        setOnResfreshListener()
 
     }
 
-    //сделать enum -> передается во фрагмент как параметр
+    private fun setOnResfreshListener() {
+        //TODO set refresh layout listener
+    }
 
     override fun initRecycler(currencyStatusResponse: List<Float>) {
         convertedMoneyAmount = listOf(
@@ -46,11 +45,11 @@ class StatusFragment(private val convertFrom: String) :
     }
 
     override fun showProgressBarState() {
-        binding.viewAnimator.visibleChildId = R.id.progress_bar
+        //TODO create fun to show progress state
     }
 
     override fun showContentState() {
-        binding.viewAnimator.visibleChildId = R.id.recycler
+        //TODO create fun to show conent state
     }
 
 }

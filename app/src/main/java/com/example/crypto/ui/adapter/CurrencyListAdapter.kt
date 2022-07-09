@@ -55,8 +55,7 @@ class CurrencyListVH(private val binding: ListItemBinding) : RecyclerView.ViewHo
 
     fun bind(name: String, money: String) {
         with(binding) {
-            moneyAmount.text = money.toString()
-            currencyName.text = name
+            //TODO using binidng set text view values
         }
     }
 }

@@ -24,16 +24,13 @@ class MainActivity : MvpAppCompatActivity(), MvpView {
         collectionAdapter = CollectionAdapter(this)
         viewPager = binding.pager
         viewPager.adapter = collectionAdapter
-        TabLayoutMediator(binding.tabLayout, viewPager) { tab, position ->
-            if (position == 0) {
-                tab.text = resources.getString(R.string.eth)
-            } else {
-                tab.text = resources.getString(R.string.btc)
-            }
 
-        }.attach()
+        attachTabLayout()
 
+    }
 
+    private fun attachTabLayout() {
+        //TODO create fun to attach tab layout using TabLayoutMediator
     }
 }
 
